@@ -84,6 +84,23 @@
   <div class="post-content">
     <p>testje…</p>
 
+<p><button class="button alt" value="AD-35-3" onclick="showFrame(this); return false;"> Virtual Try-on</button></p>
+
+<iframe id="pva-vmo-iframe" src="about:blank" data-src="//sellsmartnothard.planetva.net/api/vmoiframe.php" style="position:relative" padding="0" height="438" width="315" frameborder="0" scrolling="no" allow="camera"></iframe>
+
+<script type="text/javascript">
+ document.addEventListener('DOMContentLoaded', function(){
+    var iframe = document.getElementById('pva-vmo-iframe');
+    iframe.src = iframe.getAttribute("data-src");
+    showFrame =function(element) {
+		var frameselected = element.getAttribute("value");
+		var frameWindow = iframe.contentWindow;
+		frameWindow.postMessage(frameselected, '*');
+    }
+ }, false);
+</script>
+
+
   </div>
 
 </article>
